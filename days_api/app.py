@@ -25,7 +25,7 @@ def add_to_history(current_request):
 
 @app.get("/")
 def index():
-    """Returns an API welcome messsage."""
+    """Returns an API welcome message."""
     return jsonify({"message": "Welcome to the Days API."})
 
 
@@ -48,12 +48,12 @@ def get_days_between_two_dates():
     days_between = get_days_between(first=dates_first_datetime_object,
                      last=dates_last_datetime_object) 
 
-    return {"days_between": days_between}
+    return {"days": days_between}
 
 
 @app.route("/weekday", methods=["POST"])
 def get_day_of_the_week():
-    date = request.json
+    date = request.json["date"]
 
     if not date:
         return "Missing parameters", 400
@@ -61,6 +61,15 @@ def get_day_of_the_week():
     if not request.is_json:
         return "Request must be JSON", 400
 
+    day = get_day_of_week_on(date)
+    return {"weekday": day}
+
+
+@app.route("/history", methods=["POST"])
+def get_history():
+    args = request.args.to_dict()
+
+    number = args.get("number", default=5)
 
 if __name__ == "__main__":
     app.config['TESTING'] = True

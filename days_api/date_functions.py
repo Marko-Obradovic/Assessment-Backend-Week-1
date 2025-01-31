@@ -17,8 +17,9 @@ def get_days_between(first: datetime, last: datetime) -> int:
 
 
 def get_day_of_week_on(date_val: datetime) -> str:
-    pass
-
+    date_object = convert_to_datetime(date_val)
+    day_of_the_week_name = date_object.strftime("%A")
+    return day_of_the_week_name
 
 def get_current_age(birthdate: date) -> int:
     pass

@@ -29,6 +29,23 @@ def index():
     return jsonify({"message": "Welcome to the Days API."})
 
 
+@app.get("/between")
+def get_days_between_two_dates():
+    args = request.args.to_dict()
+
+    dates = request.json
+
+    dates_first = dates["first"]
+    dates_last = dates["last"]
+
+    dates_first_datetime_object = convert_to_datetime(dates_first)
+    dates_last_datetime_object = convert_to_datetime(dates_last)
+
+    days_between = get_days_between(first=dates_first_datetime_object,
+                     last=dates_last_datetime_object) 
+    print(days_between)
+    return dates
+
 if __name__ == "__main__":
     app.config['TESTING'] = True
     app.config['DEBUG'] = True

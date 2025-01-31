@@ -29,22 +29,38 @@ def index():
     return jsonify({"message": "Welcome to the Days API."})
 
 
-@app.get("/between")
+@app.route("/between", methods=["POST"])
 def get_days_between_two_dates():
-    args = request.args.to_dict()
-
     dates = request.json
 
     dates_first = dates["first"]
     dates_last = dates["last"]
+
+    if not dates_first or not dates_last:
+        return "Missing parameters", 400
+    
+    if not request.is_json:
+        return "Request must be JSON", 400
 
     dates_first_datetime_object = convert_to_datetime(dates_first)
     dates_last_datetime_object = convert_to_datetime(dates_last)
 
     days_between = get_days_between(first=dates_first_datetime_object,
                      last=dates_last_datetime_object) 
-    print(days_between)
-    return dates
+
+    return {"days_between": days_between}
+
+
+@app.route("/weekday", methods=["POST"])
+def get_day_of_the_week():
+    date = request.json
+
+    if not date:
+        return "Missing parameters", 400
+    
+    if not request.is_json:
+        return "Request must be JSON", 400
+
 
 if __name__ == "__main__":
     app.config['TESTING'] = True

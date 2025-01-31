@@ -3,15 +3,19 @@ platform linux -- Python 3.12.8, pytest-8.3.4, pluggy-1.5.0
 rootdir: /home/runner/work/Assessment-Backend-Week-1/Assessment-Backend-Week-1
 collected 112 items
 
-days_api/test_api.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
+days_api/test_api.py .FFFFFFFFFF.FFFFFFFFF.FFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
 FFFFFFFFFFFFFFFFFFFFFF                                                   [ 65%]
 days_api/test_date_functions.py FFFFFF.....FFFFFFFFFFFFFFFFFFFFFFFFFFFF  [100%]
 
-======================== 107 failed, 5 passed in 0.34s =========================
+======================== 104 failed, 8 passed in 0.38s =========================
 ************* Module app
-days_api/app.py:45:53: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:41:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:49:53: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/app.py:33:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/app.py:34:4: W0612: Unused variable 'args' (unused-variable)
+days_api/app.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:56:4: W0621: Redefining name 'date' from outer scope (line 5) (redefined-outer-name)
+days_api/app.py:55:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
 days_api/app.py:9:0: W0611: Unused get_day_of_week_on imported from date_functions (unused-import)
@@ -26,5 +30,5 @@ days_api/date_functions.py:23:0: C0116: Missing function or method docstring (mi
 days_api/date_functions.py:23:20: W0613: Unused argument 'birthdate' (unused-argument)
 
 -----------------------------------
-Your code has been rated at 6.00/10
+Your code has been rated at 5.81/10
 

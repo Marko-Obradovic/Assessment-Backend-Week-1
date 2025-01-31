@@ -5,28 +5,26 @@ collected 112 items
 
 days_api/test_api.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
 FFFFFFFFFFFFFFFFFFFFFF                                                   [ 65%]
-days_api/test_date_functions.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF  [100%]
+days_api/test_date_functions.py FFFFFF.....FFFFFFFFFFFFFFFFFFFFFFFFFFFF  [100%]
 
-============================= 112 failed in 0.35s ==============================
+======================== 107 failed, 5 passed in 0.34s =========================
 ************* Module app
+days_api/app.py:45:53: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:33:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:34:4: W0612: Unused variable 'args' (unused-variable)
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
-days_api/app.py:7:0: W0611: Unused request imported from flask (unused-import)
-days_api/app.py:9:0: W0611: Unused convert_to_datetime imported from date_functions (unused-import)
 days_api/app.py:9:0: W0611: Unused get_day_of_week_on imported from date_functions (unused-import)
-days_api/app.py:9:0: W0611: Unused get_days_between imported from date_functions (unused-import)
 days_api/app.py:9:0: W0611: Unused get_current_age imported from date_functions (unused-import)
 ************* Module date_functions
+days_api/date_functions.py:9:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/date_functions.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:6:24: W0613: Unused argument 'date_val' (unused-argument)
-days_api/date_functions.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:10:21: W0613: Unused argument 'first' (unused-argument)
-days_api/date_functions.py:10:38: W0613: Unused argument 'last' (unused-argument)
-days_api/date_functions.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:14:23: W0613: Unused argument 'date_val' (unused-argument)
-days_api/date_functions.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:18:20: W0613: Unused argument 'birthdate' (unused-argument)
+days_api/date_functions.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/date_functions.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/date_functions.py:19:23: W0613: Unused argument 'date_val' (unused-argument)
+days_api/date_functions.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/date_functions.py:23:20: W0613: Unused argument 'birthdate' (unused-argument)
 
 -----------------------------------
-Your code has been rated at 2.73/10
+Your code has been rated at 6.00/10
 
